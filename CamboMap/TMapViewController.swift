@@ -221,12 +221,16 @@ class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSM
 
     // MARK: - Button Action -
     @IBAction func btnLocalSearchAction(sender: UIBarButtonItem)    {
+        
+      
         let center    = CLLocationCoordinate2DMake(37.788204, -122.411937)
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
         let viewport  = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
         let config    = GMSPlacePickerConfig(viewport: viewport)
         placePicker   = GMSPlacePicker(config: config)
+        
+        
         
      
         placePicker?.pickPlaceWithCallback({ (place: GMSPlace?, error: NSError?) -> Void in

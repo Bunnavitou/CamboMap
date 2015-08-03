@@ -8,6 +8,8 @@
 
 
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: YomanViewController {
+    
+    
 
 }

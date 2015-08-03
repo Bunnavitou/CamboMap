@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TPlaceListViewController: UIViewController {
+class TPlaceListViewController: YomanViewController {
 
     
     
@@ -43,6 +43,7 @@ class TPlaceListViewController: UIViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
         if cell == nil {
             cell = UITableViewCell(style: .Value1, reuseIdentifier: cellIdentifier) as UITableViewCell
+        
         }
         
         cell!.textLabel?.font        = UIFont.systemFontOfSize(15)
@@ -50,6 +51,12 @@ class TPlaceListViewController: UIViewController {
         cell!.detailTextLabel?.font  = UIFont.systemFontOfSize(12)
         cell!.detailTextLabel?.textColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
         
+        cell!.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
+        
+        if(indexPath.row % 2 != 0){
+            cell?.backgroundColor=UIColor.lightGrayColor()
+        }
+
       
         cell?.textLabel?.text="YOMAN"
         
