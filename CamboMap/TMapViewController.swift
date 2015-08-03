@@ -228,6 +228,7 @@ class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSM
         let config    = GMSPlacePickerConfig(viewport: viewport)
         placePicker   = GMSPlacePicker(config: config)
         
+     
         placePicker?.pickPlaceWithCallback({ (place: GMSPlace?, error: NSError?) -> Void in
             if let error = error {
                 println("Place error: \(error.localizedDescription)")

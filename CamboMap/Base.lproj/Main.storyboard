@@ -393,8 +393,31 @@
                     <view key="view" contentMode="scaleToFill" id="VXX-9J-vaI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yzX-1H-FQD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="WCj-mS-5bn"/>
+                                    <constraint firstAttribute="width" constant="600" id="ZIe-qb-jwg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ib4-5q-2yS" id="rrZ-OF-edr"/>
+                                    <outlet property="delegate" destination="ib4-5q-2yS" id="5T2-3e-YtF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yzX-1H-FQD" firstAttribute="leading" secondItem="VXX-9J-vaI" secondAttribute="leading" id="9hG-xS-AHp"/>
+                            <constraint firstAttribute="trailing" secondItem="yzX-1H-FQD" secondAttribute="trailing" id="OFh-va-nS7"/>
+                            <constraint firstItem="MNo-ys-xVf" firstAttribute="top" secondItem="yzX-1H-FQD" secondAttribute="bottom" id="UPD-YT-kAN"/>
+                            <constraint firstItem="yzX-1H-FQD" firstAttribute="top" secondItem="VXX-9J-vaI" secondAttribute="top" id="tZA-fh-FvA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainTableView" destination="yzX-1H-FQD" id="8tT-fo-moY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zH-cy-MT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
