@@ -13,10 +13,7 @@ class TutorialPageViewController: UIViewController {
 
     @IBOutlet var mainScroll: UIScrollView!
     
-    
     var TittleArray  : NSArray = []
-
-
     
     var moviePlayer:MPMoviePlayerController!
     
@@ -25,14 +22,14 @@ class TutorialPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         self.navigationController?.navigationBarHidden  = true
-        
+        //====for play moive
         var url:NSURL = NSURL(string: "http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v")!
-        
         moviePlayer = MPMoviePlayerController(contentURL: url)
         moviePlayer.view.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height)
         self.view.addSubview(moviePlayer.view)
-        
         self.view.insertSubview(moviePlayer.view, atIndex: 0)
         moviePlayer.fullscreen = true
         moviePlayer.controlStyle = MPMovieControlStyle.None
@@ -80,6 +77,8 @@ class TutorialPageViewController: UIViewController {
     func BtnLoginAction(sender: AnyObject) {
         self.navigationController?.navigationBarHidden  = false
         self.dismissViewControllerAnimated(false, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
     
     

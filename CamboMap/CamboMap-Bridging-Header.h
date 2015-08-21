@@ -16,7 +16,11 @@
 #import "WebViewStyleViewController.h"
 #import "YomanViewController.h"
 #import "CustomPageControl.h"
+#import "btRippleButtton.h"
+#import "DGAaimaView.h"
 
-
+#import "AnimatedGif.h"
+#import "UIImage+animatedGIF.h"
+#import "DGActivityIndicatorView.h"
 
 #import <GoogleMaps/GoogleMaps.h>

@@ -10,7 +10,8 @@ import UIKit
 
 class TPlaceListViewController: YomanViewController {
 
-    
+
+    var arrData = NSMutableArray()
     
     @IBOutlet var mainTableView: UITableView!
     
@@ -20,6 +21,11 @@ class TPlaceListViewController: YomanViewController {
 
         self.title = "List"
         self.navigationController?.navigationBarHidden  = false
+        
+        arrData.addObject("Asia")
+        arrData.addObject("Cambodia")
+        arrData.addObject("South Korea")
+     
         
     }
     
@@ -35,7 +41,7 @@ class TPlaceListViewController: YomanViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return arrData.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,22 +49,35 @@ class TPlaceListViewController: YomanViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
         if cell == nil {
             cell = UITableViewCell(style: .Value1, reuseIdentifier: cellIdentifier) as UITableViewCell
-        
+            
+            if(indexPath.row==1){
+                var vline   = UIView()
+                vline.frame = CGRectMake(20, 44, self.mainTableView.frame.size.width-20, 1)
+                vline.backgroundColor=UIColor.whiteColor()
+                cell?.contentView.addSubview(vline)
+            }
         }
         
+       
         cell!.textLabel?.font        = UIFont.systemFontOfSize(15)
-        cell!.textLabel?.textColor   = UIColor(red: 80 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1)
-        cell!.detailTextLabel?.font  = UIFont.systemFontOfSize(12)
-        cell!.detailTextLabel?.textColor = UIColor(red: 150 / 255, green: 150 / 255, blue: 150 / 255, alpha: 1)
-        
-        cell!.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
-        
-        if(indexPath.row % 2 != 0){
-            cell?.backgroundColor=UIColor.lightGrayColor()
+       
+        if(indexPath.row==0){
+            cell!.textLabel?.textColor   = UIColor(red: 102 / 255, green: 102 / 255, blue: 153 / 255, alpha: 1)
+        }else{
+            
+            
+            cell!.backgroundColor=UIColor(red: 51 / 255, green: 153 / 255, blue: 255 / 255, alpha: 1)
+            cell!.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
+            cell!.textLabel?.textColor   = UIColor(red: 80 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1)
         }
+        
+        //        if(indexPath.row % 2 != 0){
+        //            cell?.backgroundColor=UIColor.lightGrayColor()
+        //        }
+        
+        cell?.textLabel?.text=arrData[indexPath.row] as? String
+        
 
-      
-        cell?.textLabel?.text="YOMAN"
         
         return cell!
     }
@@ -70,9 +89,15 @@ class TPlaceListViewController: YomanViewController {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
         
         
+        self.performSegueWithIdentifier("placeDetailSegue", sender: nil)
+    }
+    
+    // MARK: - Button Action -
+    @IBAction func btnBackAction(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
         
     }
-
+    
    
     // MARK: - Navigation -
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

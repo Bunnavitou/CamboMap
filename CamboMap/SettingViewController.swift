@@ -12,7 +12,7 @@ class SettingViewController: YomanViewController {
     
     
     
-    
+    // MARK: - View LifeCyle -
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,23 +21,18 @@ class SettingViewController: YomanViewController {
         self.navigationController?.navigationBarHidden  = false
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
         
-        
-
-
     }
 
+    // MARK: - Button Action -
+    @IBAction func btnBackAction(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     @IBAction func btnLogoutAction(sender: UIButton) {
-        self.removeObserver(self, forKeyPath: "myLocation", context: nil)
-        
+
         let i = self.navigationController?.viewControllers.count
-        self.navigationController?.popToViewController(self.navigationController?.viewControllers[i!-3] as! UIViewController, animated: false) // 현재 페이지에서 -2page
-        
+        self.navigationController?.popToViewController(self.navigationController?.viewControllers[i!-3] as! UIViewController, animated: false)
         
     }
-    
-    
-    
-    
     
 }

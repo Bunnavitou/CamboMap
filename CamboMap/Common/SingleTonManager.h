@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import <MapKit/MapKit.h>
 
 @interface SingleTonManager : NSObject{
     ///====1====Bool Declaration======================//
@@ -30,6 +33,15 @@
     ///====5====NSDate Declaration====================//
     NSDate* _dateStart;
     NSDate* _dateEnd;
+    
+    
+    
+    //===Other
+    
+    CLLocationManager *_SlocationMananger;
+    
+    CGFloat *_latitudeLocation;
+    CGFloat *_longitudeLocation;
     
 }
 
@@ -61,6 +73,12 @@
 @property (nonatomic, copy)   NSDate* dateStart;
 @property (nonatomic, copy)   NSDate* dateEnd;
 
+//===Other
+@property (nonatomic)  CLLocationManager * SlocationMananger;
+
+
+@property (nonatomic)  CGFloat * latitudeLocation;
+@property (nonatomic)  CGFloat * longitudeLocation;
 
 + (SingleTonManager *)ShareSingleTonManager;
 

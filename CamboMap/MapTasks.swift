@@ -42,6 +42,7 @@ class MapTasks: NSObject {
     
     var totalDuration: String!
     
+    var allResult : NSArray!
     
     override init() {
         super.init()
@@ -68,14 +69,15 @@ class MapTasks: NSObject {
                     completionHandler(status: "", success: false)
                 }
                 else {
-                    println("-->\(dictionary)")
-                    
+ 
                     // Get the response status.
                     let status = dictionary["status"] as! String
                     
                     if status == "OK" { //----> "status" : "OK"
                         let allResults = dictionary["results"] as! Array<Dictionary<NSObject, AnyObject>>
                         self.lookupAddressResults = allResults[0]
+                        
+                        self.allResult = dictionary["results"] as! NSArray
                         
                         // Keep the most important values.
                         self.fetchedFormattedAddress = self.lookupAddressResults["formatted_address"] as! String
@@ -84,6 +86,7 @@ class MapTasks: NSObject {
                         self.fetchedAddressLatitude = ((geometry["location"] as! Dictionary<NSObject, AnyObject>)["lat"] as! NSNumber).doubleValue
                         
                         completionHandler(status: status, success: true)
+ 
                     }
                     else {  //----> "status" : "ZERO_RESULTS"
                         completionHandler(status: status, success: false)

@@ -30,6 +30,10 @@
 @synthesize dateStart       = _dateStart;
 @synthesize dateEnd         = _dateEnd;
 
+@synthesize SlocationMananger = _SlocationMananger;
+
+@synthesize longitudeLocation = _longitudeLocation;
+@synthesize latitudeLocation  = _latitudeLocation;
 
 #pragma mark - Class Object Alloc -
 static SingleTonManager *singleMgr = nil;
