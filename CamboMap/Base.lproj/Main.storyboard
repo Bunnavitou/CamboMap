@@ -400,20 +400,20 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yzX-1H-FQD">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="600" id="WCj-mS-5bn"/>
                                     <constraint firstAttribute="width" constant="600" id="ZIe-qb-jwg"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" id="r5L-An-J3x">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" id="nT8-8C-e2W">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r5L-An-J3x" id="f7R-Ko-vod">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nT8-8C-e2W" id="dQz-cy-Rma">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="ib4-5q-2yS" id="rrZ-OF-edr"/>
                                     <outlet property="delegate" destination="ib4-5q-2yS" id="5T2-3e-YtF"/>
@@ -472,66 +472,14 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="146" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgc-an-tJS">
-                                            <rect key="frame" x="0.0" y="0.0" width="146" height="146"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCI-QQ-Y4H">
-                                                    <rect key="frame" x="0.0" y="117" width="146" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="146" id="FwU-Q7-an2"/>
-                                                        <constraint firstAttribute="height" constant="21" id="QQE-4E-nVI"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSp-6k-8O8">
-                                                    <rect key="frame" x="23" y="8" width="100" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="1rt-gs-4sK"/>
-                                                        <constraint firstAttribute="width" constant="100" id="OxN-7n-lUD"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="qSp-6k-8O8" secondAttribute="bottom" constant="38" id="BQO-Hh-tSr"/>
-                                                <constraint firstAttribute="width" constant="146" id="Fmj-Oa-rbA"/>
-                                                <constraint firstAttribute="bottom" secondItem="VCI-QQ-Y4H" secondAttribute="bottom" constant="8" id="Kar-iU-TSd"/>
-                                                <constraint firstAttribute="trailing" secondItem="qSp-6k-8O8" secondAttribute="trailing" constant="23" id="M4Y-ca-fZX"/>
-                                                <constraint firstItem="qSp-6k-8O8" firstAttribute="top" secondItem="Qgc-an-tJS" secondAttribute="top" constant="8" id="MTx-ZE-apj"/>
-                                                <constraint firstAttribute="height" constant="146" id="SOj-Gq-p8z"/>
-                                                <constraint firstItem="qSp-6k-8O8" firstAttribute="leading" secondItem="Qgc-an-tJS" secondAttribute="leading" constant="23" id="rXF-Bv-aJz"/>
-                                                <constraint firstItem="VCI-QQ-Y4H" firstAttribute="leading" secondItem="Qgc-an-tJS" secondAttribute="leading" id="rYO-T4-dij"/>
-                                                <constraint firstAttribute="trailing" secondItem="VCI-QQ-Y4H" secondAttribute="trailing" id="xUp-cD-Pou"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Qgc-an-tJS" firstAttribute="top" secondItem="gMl-38-gq9" secondAttribute="top" id="CPG-lQ-w1B"/>
-                                    <constraint firstItem="Qgc-an-tJS" firstAttribute="leading" secondItem="gMl-38-gq9" secondAttribute="leading" id="Dbq-e7-QdO"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qgc-an-tJS" secondAttribute="bottom" id="uc8-A9-QvL"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qgc-an-tJS" secondAttribute="trailing" id="yMo-eq-9jX"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="imageD" destination="qSp-6k-8O8" id="d6O-eJ-IEd"/>
-                                    <outlet property="lblName" destination="VCI-QQ-Y4H" id="yd5-zh-6bE"/>
-                                    <outlet property="mainCellView" destination="Qgc-an-tJS" id="1Nt-C4-53I"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

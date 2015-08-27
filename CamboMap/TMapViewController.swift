@@ -17,6 +17,7 @@ enum TravelModes: Int {
 
 class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate{
 
+    
     @IBOutlet var viewMap: GMSMapView!
     
     @IBOutlet var toolbarMenu: UIToolbar!
@@ -58,6 +59,8 @@ class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSM
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        
         mainTableView.hidden = true
         
         
@@ -96,6 +99,8 @@ class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSM
     
     // MARK: - GMSMapViewDelegate method implementation -
     func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        
+        print("==> \(coordinate.latitude) -- \(coordinate.longitude)")
         if checkMoveMap {
             viewMap.settings.myLocationButton = false
         }else{
@@ -191,16 +196,17 @@ class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSM
         let cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
       
         print(self.mapTasks.allResult[indexPath.row])
-        
-        print(self.mapTasks.allResult[indexPath.row].valueForKey("formatted_address"))
-        print(self.mapTasks.allResult[indexPath.row].valueForKey("geometry")?.valueForKey("location")?.valueForKey("lat"))
-        print(self.mapTasks.allResult[indexPath.row].valueForKey("geometry")?.valueForKey("location")?.valueForKey("lng"))
+    
         
         self.longitudeCurrLocation = self.mapTasks.allResult[indexPath.row].valueForKey("geometry")?.valueForKey("location")?.valueForKey("lng") as? Double
         self.latitudeCurrLocation  = self.mapTasks.allResult[indexPath.row].valueForKey("geometry")?.valueForKey("location")?.valueForKey("lat") as? Double
         self.placeName             = (self.mapTasks.allResult[indexPath.row].valueForKey("formatted_address") as? String)!
 
-        let coordinate = CLLocationCoordinate2D(latitude: self.latitudeCurrLocation, longitude: self.longitudeCurrLocation)
+        println(self.longitudeCurrLocation)
+        println(self.latitudeCurrLocation)
+        
+        let coordinate = CLLocationCoordinate2D(latitude: self.latitudeCurrLocation , longitude: self.longitudeCurrLocation)
+//        let coordinateTest = CLLocationCoordinate2D(latitude: self.latitudeCurrLocation - 0.01900 , longitude: self.longitudeCurrLocation + 0.0092)
         self.viewMap.camera = GMSCameraPosition.cameraWithTarget(coordinate, zoom: 14.0)
         self.setupLocationMarker(coordinate)
     }
@@ -260,6 +266,7 @@ class TMapViewController: YomanViewController ,  CLLocationManagerDelegate, GMSM
         locationMarker.icon            = GMSMarker.markerImageWithColor(UIColor.blueColor())
         locationMarker.opacity         = 0.75
         
+        locationMarker.tappable  = true
         locationMarker.flat            = true
         locationMarker.snippet         = placeName as String
         

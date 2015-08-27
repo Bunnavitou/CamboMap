@@ -105,12 +105,10 @@ class ChooseOptionViewController: YomanViewController,UIScrollViewDelegate {
         //======Radar Animation
         let image1: UIImage = UIImage(named: "test111.png")!
         let bgImage1 = UIImageView(image: image1)
-        bgImage1.frame = CGRectMake(screenWidth * 2 - 305,screenHeight - 335,210,210)
         self.mainScrollView.addSubview(bgImage1)
         
         let image: UIImage = UIImage(named: "test222.png")!
         let bgImage = UIImageView(image: image)
-        bgImage.frame = CGRectMake(screenWidth * 2 - 305,screenHeight - 335,210,210)
         self.mainScrollView.addSubview(bgImage)
         
         let scaleAnimate = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -124,22 +122,40 @@ class ChooseOptionViewController: YomanViewController,UIScrollViewDelegate {
         bgImage.layer.addAnimation(scaleAnimate, forKey: "animation")
         
         let testUV = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.TriplePulse, tintColor: UIColor.redColor(), size: 30)
-        testUV.frame=CGRectMake(screenWidth * 2 - 240, screenHeight - 335, 100, 100)
+       
         self.mainScrollView.addSubview(testUV)
         testUV.startAnimating()
         
         let testUV1 = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.TriplePulse, tintColor: UIColor.purpleColor(), size: 30)
-        testUV1.frame=CGRectMake(screenWidth * 2 - 200, screenHeight - 265, 100, 100)
+      
         self.mainScrollView.addSubview(testUV1)
         testUV1.startAnimating()
         
         let testUV2 = DGActivityIndicatorView(type: DGActivityIndicatorAnimationType.TriplePulse, tintColor: UIColor.cyanColor(), size: 30)
-        testUV2.frame=CGRectMake(screenWidth * 2 - 300, screenHeight - 205, 100, 100)
+        
         self.mainScrollView.addSubview(testUV2)
         testUV2.startAnimating()
+       
+ 
+        if(UIScreen.mainScreen().bounds.size.width == 320){
+            bgImage1.frame = CGRectMake(screenWidth * 2 - 265,screenHeight - 325,210,210)
+            bgImage.frame = CGRectMake(screenWidth * 2 - 265,screenHeight - 325,210,210)
+            testUV.frame=CGRectMake(screenWidth * 2 - 160, screenHeight - 290, 100, 100)
+            testUV1.frame=CGRectMake(screenWidth * 2 - 120, screenHeight - 235, 100, 100)
+            testUV2.frame=CGRectMake(screenWidth * 2 - 230, screenHeight - 180, 100, 100)
+            
+            btnTest = BTRippleButtton(image: UIImage(named:"Yo-IntroBtb1.png"), andFrame: CGRectMake(screenWidth/2 - 40, 130, 80, 80), andTarget: "BtnLoginAction:", andID: self)
+        }else{
+            bgImage1.frame = CGRectMake(screenWidth * 2 - 295,screenHeight - 335,210,210)
+            bgImage.frame = CGRectMake(screenWidth * 2 - 295,screenHeight - 335,210,210)
+            testUV.frame=CGRectMake(screenWidth * 2 - 240, screenHeight - 335, 100, 100)
+            testUV1.frame=CGRectMake(screenWidth * 2 - 200, screenHeight - 265, 100, 100)
+            testUV2.frame=CGRectMake(screenWidth * 2 - 300, screenHeight - 220, 100, 100)
+            
+            btnTest = BTRippleButtton(image: UIImage(named:"Yo-IntroBtb1.png"), andFrame: CGRectMake(screenWidth/2 - 65, 140, 130, 130), andTarget: "BtnLoginAction:", andID: self)
+        }
         
         //=====Button Click Log process
-        btnTest = BTRippleButtton(image: UIImage(named:"Yo-IntroBtb1.png"), andFrame: CGRectMake(screenWidth/2 - 130/2, 140, 130, 130), andTarget: "BtnLoginAction:", andID: self)
         btnTest.setRippeEffectEnabled(true)
         btnTest.setRippleEffectWithColor(UIColor(red: 32/255.0, green: 32/255.0, blue: 32/255.0, alpha: 1.0))
         self.view.addSubview(btnTest)
@@ -150,7 +166,7 @@ class ChooseOptionViewController: YomanViewController,UIScrollViewDelegate {
         Page.currentPageIndicatorTintColor  = UIColor.whiteColor()
         Page.currentPage                    = 0
         Page.numberOfPages                  = ImageArray.count
-        Page.frame                          = CGRectMake(screenWidth / 2-35, screenHeight - 80, 60, 20)
+        Page.frame                          = CGRectMake(screenWidth / 2-30, screenHeight - 80, 60, 20)
         self.view.addSubview(Page)
         
 
@@ -161,25 +177,22 @@ class ChooseOptionViewController: YomanViewController,UIScrollViewDelegate {
         println("x - > \(scrollView.contentOffset.x)")
         println(scrollView.contentOffset.y)
         
-        if(scrollView.contentOffset.y == 0){
+        if(SysUtils.isNull(scrollView.contentOffset.y)){
             slideContentView.frame = CGRectMake(slideContentView.frame.origin.x,
                 self.view.frame.size.height - 50  - scrollView.contentOffset.y,
                 slideContentView.frame.size.width,
                 slideContentView.frame.size.height + scrollView.contentOffset.y);
             return
         }
-        if(scrollView.showsHorizontalScrollIndicator){
-          
+  
+        var pageWidth : CGFloat=mainScrollView.bounds.size.width
+        var page = Int(floor((mainScrollView.contentOffset.x - pageWidth / 2.0) / pageWidth) + 1.0)
+        Page.currentPage=page
+        
+        if(page == 0){
+            btnTest.setImage(UIImage(named: "Yo-IntroBtb1.png"))
         }else{
-            var pageWidth : CGFloat=mainScrollView.bounds.size.width
-            var page = Int(floor((mainScrollView.contentOffset.x - pageWidth / 2.0) / pageWidth) + 1.0)
-            Page.currentPage=page
-            
-            if(page == 0){
-                btnTest.setImage(UIImage(named: "Yo-IntroBtb1.png"))
-            }else{
-                btnTest.setImage(UIImage(named: "Yo-IntroBtb2.png"))
-            }
+            btnTest.setImage(UIImage(named: "Yo-IntroBtb2.png"))
         }
 
     }
@@ -206,7 +219,6 @@ class ChooseOptionViewController: YomanViewController,UIScrollViewDelegate {
     
     func CreateScrollViewTur(){
 
-        
         var blurredBgImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
         blurredBgImage.contentMode=UIViewContentMode.ScaleToFill
         self.view.addSubview(blurredBgImage)
@@ -223,7 +235,7 @@ class ChooseOptionViewController: YomanViewController,UIScrollViewDelegate {
         slideContentView.addSubview(slideUpLabel)
 
         var slideUpImage = UIImageView(frame: CGRectMake(self.view.frame.size.width/2 - 12, 4, 24, 22.5))
-        slideUpImage.image = UIImage(named: "Yo_rolling_select.png")
+        slideUpImage.image = UIImage(named: "Yo-up-arrow.png")
         slideContentView.addSubview(slideUpImage)
         
         var detailsText = UITextView(frame: CGRectMake(0, 0, 0, 0))

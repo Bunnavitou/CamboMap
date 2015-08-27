@@ -8,12 +8,17 @@
 
 import UIKit
 
-class TPlaceListViewController: YomanViewController {
+class TPlaceListViewController: YomanViewController ,UITableViewDataSource , UITableViewDelegate{
 
-
+    var imageNameList  : Array <NSString> = []
+    
     var arrData = NSMutableArray()
     
     @IBOutlet var mainTableView: UITableView!
+
+    var cell : UITableViewCell?
+    
+    let IMV     = UIImageView()
     
     // MARK: - View LifeCycle Method Area -
     override func viewDidLoad() {
@@ -21,12 +26,16 @@ class TPlaceListViewController: YomanViewController {
 
         self.title = "List"
         self.navigationController?.navigationBarHidden  = false
-        
-        arrData.addObject("Asia")
-        arrData.addObject("Cambodia")
+       
+        arrData.addObject("Cambodia Kingdam of Wonder")
         arrData.addObject("South Korea")
      
-        
+        var index = 1
+        while(index < 3){
+            let imageName = NSString(format: "z%d.jpg", index)
+            imageNameList.append(imageName)
+            index++
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,46 +47,49 @@ class TPlaceListViewController: YomanViewController {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+        
+        return 180;
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrData.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
+   
+        cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as? UITableViewCell
+        
         if cell == nil {
-            cell = UITableViewCell(style: .Value1, reuseIdentifier: cellIdentifier) as UITableViewCell
-            
-            if(indexPath.row==1){
-                var vline   = UIView()
-                vline.frame = CGRectMake(20, 44, self.mainTableView.frame.size.width-20, 1)
-                vline.backgroundColor=UIColor.whiteColor()
-                cell?.contentView.addSubview(vline)
-            }
-        }
-        
-       
-        cell!.textLabel?.font        = UIFont.systemFontOfSize(15)
-       
-        if(indexPath.row==0){
-            cell!.textLabel?.textColor   = UIColor(red: 102 / 255, green: 102 / 255, blue: 153 / 255, alpha: 1)
-        }else{
-            
-            
-            cell!.backgroundColor=UIColor(red: 51 / 255, green: 153 / 255, blue: 255 / 255, alpha: 1)
-            cell!.accessoryType=UITableViewCellAccessoryType.DisclosureIndicator
-            cell!.textLabel?.textColor   = UIColor(red: 80 / 255, green: 80 / 255, blue: 80 / 255, alpha: 1)
-        }
-        
-        //        if(indexPath.row % 2 != 0){
-        //            cell?.backgroundColor=UIColor.lightGrayColor()
-        //        }
-        
-        cell?.textLabel?.text=arrData[indexPath.row] as? String
-        
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "reuseIdentifier")
 
+
+        }
+        var TestWidth = textWidthMeasure(arrData[indexPath.row] as! String, constrainedToSize: CGSizeMake(UIScreen.mainScreen().bounds.size.width-16-10,2000), fontSize: 20) as CGFloat
+        
+        
+        let IMV     = UIImageView()
+        IMV.image   = UIImage(named: self.imageNameList[indexPath.row] as String)
+        IMV.frame   = CGRectMake(0 , 0, cell!.bounds.size.width, cell!.bounds.size.height)
+        cell!.contentView.addSubview(IMV)
+        
+ 
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(cell!.bounds.size.width / 2 - (TestWidth + 15) / 2 , cell!.bounds.size.height / 2 - 25 , TestWidth + 15 , 50)
+        cell!.contentView.addSubview(blurView)
+        
+        let lblTittle           = UILabel()
+       
+        lblTittle.layer.borderWidth  = 1
+        lblTittle.layer.borderColor = UIColor.whiteColor().CGColor
+        lblTittle.text          = arrData[indexPath.row] as? String
+        lblTittle.textAlignment = NSTextAlignment.Center
+        lblTittle.textColor     = UIColor.whiteColor()
+        lblTittle.font          = UIFont(name: kDefaultFontName, size: 20)
+        lblTittle.frame         = CGRectMake(cell!.bounds.size.width / 2 - TestWidth / 2 , cell!.bounds.size.height / 2 - 20 , TestWidth , 40)
+        cell!.contentView.addSubview(lblTittle)
         
         return cell!
     }
@@ -88,8 +100,12 @@ class TPlaceListViewController: YomanViewController {
         
         let cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
         
-        
-        self.performSegueWithIdentifier("placeDetailSegue", sender: nil)
+        if(indexPath.row==0){
+            self.performSegueWithIdentifier("placeDetailSegue", sender: nil)
+        }else{
+            SysUtils.showMessage("Comming Soon man......!")
+        }
+      
     }
     
     // MARK: - Button Action -
@@ -103,6 +119,9 @@ class TPlaceListViewController: YomanViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
     }
-
+    
+    func textWidthMeasure(str:NSString, constrainedToSize:CGSize, fontSize:CGFloat)->CGFloat{
+        return str .boundingRectWithSize(constrainedToSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFontOfSize(fontSize)], context: nil).size.width
+    }
 
 }

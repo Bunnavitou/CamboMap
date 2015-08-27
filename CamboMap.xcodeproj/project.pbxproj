@@ -27,6 +27,7 @@
 		391D9E091B85FB3A001245BF /* DGActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 391D9DFD1B85FB3A001245BF /* DGActivityIndicatorView.m */; };
 		391D9E0C1B860599001245BF /* test111.png in Resources */ = {isa = PBXBuildFile; fileRef = 391D9E0A1B860599001245BF /* test111.png */; };
 		391D9E0D1B860599001245BF /* test222.png in Resources */ = {isa = PBXBuildFile; fileRef = 391D9E0B1B860599001245BF /* test222.png */; };
+		3965EDCD1B8EA91B0021F28C /* TableViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3965EDCC1B8EA91B0021F28C /* TableViewControllerTest.swift */; };
 		3985AF641B6894FB0083C323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3985AF631B6894FB0083C323 /* AppDelegate.swift */; };
 		3985AF671B6894FB0083C323 /* CamboMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3985AF651B6894FB0083C323 /* CamboMap.xcdatamodeld */; };
 		3985AF6C1B6894FB0083C323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3985AF6A1B6894FB0083C323 /* Main.storyboard */; };
@@ -154,6 +155,16 @@
 		39B70CE91B6B3C3A00FA4C4B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B70CE81B6B3C3A00FA4C4B /* Security.framework */; };
 		39B70CEB1B6B3C4500FA4C4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B70CEA1B6B3C4400FA4C4B /* UIKit.framework */; };
 		39B70CED1B6B3C7100FA4C4B /* libobjc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B70CEC1B6B3C7100FA4C4B /* libobjc.dylib */; };
+		39C437681B8C5C05000F9C8C /* 123123.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C437671B8C5C05000F9C8C /* 123123.png */; };
+		39C4376B1B8C62BC000F9C8C /* Yo-up-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C437691B8C62BC000F9C8C /* Yo-up-arrow.png */; };
+		39C4376C1B8C62BC000F9C8C /* Yo-up-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C4376A1B8C62BC000F9C8C /* Yo-up-arrow@2x.png */; };
+		39C5CCE31B8D9B0000B89A78 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C5CCE21B8D9B0000B89A78 /* CHTCollectionViewWaterfallLayout.swift */; };
+		39C5CCE81B8D9CEE00B89A78 /* NYCity1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C5CCE41B8D9CEE00B89A78 /* NYCity1.png */; };
+		39C5CCE91B8D9CEE00B89A78 /* NYCity2.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C5CCE51B8D9CEE00B89A78 /* NYCity2.png */; };
+		39C5CCEA1B8D9CEE00B89A78 /* NYCity3.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C5CCE61B8D9CEE00B89A78 /* NYCity3.png */; };
+		39C5CCEB1B8D9CEE00B89A78 /* NYCity4.png in Resources */ = {isa = PBXBuildFile; fileRef = 39C5CCE71B8D9CEE00B89A78 /* NYCity4.png */; };
+		39C5CCF11B8DBB2300B89A78 /* z1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39C5CCEF1B8DBB2300B89A78 /* z1.jpg */; };
+		39C5CCF21B8DBB2300B89A78 /* z2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 39C5CCF01B8DBB2300B89A78 /* z2.jpg */; };
 		39D0B86A1B8463D2003ECF75 /* TPlaceListDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0B8691B8463D2003ECF75 /* TPlaceListDetailViewCell.swift */; };
 		39D0B86E1B846A72003ECF75 /* TPlaceListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D0B86D1B846A72003ECF75 /* TPlaceListDetailViewController.swift */; };
 		39D31E201B6F32A800D9B4E3 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = 39D31E1D1B6F32A800D9B4E3 /* List.png */; };
@@ -198,6 +209,7 @@
 		391D9DFD1B85FB3A001245BF /* DGActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGActivityIndicatorView.m; sourceTree = "<group>"; };
 		391D9E0A1B860599001245BF /* test111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test111.png; sourceTree = "<group>"; };
 		391D9E0B1B860599001245BF /* test222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test222.png; sourceTree = "<group>"; };
+		3965EDCC1B8EA91B0021F28C /* TableViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerTest.swift; sourceTree = "<group>"; };
 		3985AF5E1B6894FB0083C323 /* CamboMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamboMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3985AF621B6894FB0083C323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3985AF631B6894FB0083C323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -356,6 +368,16 @@
 		39B70CE81B6B3C3A00FA4C4B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		39B70CEA1B6B3C4400FA4C4B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39B70CEC1B6B3C7100FA4C4B /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
+		39C437671B8C5C05000F9C8C /* 123123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123123.png; sourceTree = "<group>"; };
+		39C437691B8C62BC000F9C8C /* Yo-up-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yo-up-arrow.png"; sourceTree = "<group>"; };
+		39C4376A1B8C62BC000F9C8C /* Yo-up-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yo-up-arrow@2x.png"; sourceTree = "<group>"; };
+		39C5CCE21B8D9B0000B89A78 /* CHTCollectionViewWaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHTCollectionViewWaterfallLayout.swift; sourceTree = "<group>"; };
+		39C5CCE41B8D9CEE00B89A78 /* NYCity1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYCity1.png; sourceTree = "<group>"; };
+		39C5CCE51B8D9CEE00B89A78 /* NYCity2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYCity2.png; sourceTree = "<group>"; };
+		39C5CCE61B8D9CEE00B89A78 /* NYCity3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYCity3.png; sourceTree = "<group>"; };
+		39C5CCE71B8D9CEE00B89A78 /* NYCity4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NYCity4.png; sourceTree = "<group>"; };
+		39C5CCEF1B8DBB2300B89A78 /* z1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = z1.jpg; sourceTree = "<group>"; };
+		39C5CCF01B8DBB2300B89A78 /* z2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = z2.jpg; sourceTree = "<group>"; };
 		39D0B8691B8463D2003ECF75 /* TPlaceListDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPlaceListDetailViewCell.swift; sourceTree = "<group>"; };
 		39D0B86D1B846A72003ECF75 /* TPlaceListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPlaceListDetailViewController.swift; sourceTree = "<group>"; };
 		39D31E1D1B6F32A800D9B4E3 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
@@ -480,12 +502,14 @@
 				39D31E231B6F336F00D9B4E3 /* TPlaceListViewController.swift */,
 				39D0B86D1B846A72003ECF75 /* TPlaceListDetailViewController.swift */,
 				39D0B8691B8463D2003ECF75 /* TPlaceListDetailViewCell.swift */,
+				39C5CCE21B8D9B0000B89A78 /* CHTCollectionViewWaterfallLayout.swift */,
 				3985AF6A1B6894FB0083C323 /* Main.storyboard */,
 				3985AF6D1B6894FB0083C323 /* Images.xcassets */,
 				3985AF6F1B6894FB0083C323 /* LaunchScreen.xib */,
 				3985AF651B6894FB0083C323 /* CamboMap.xcdatamodeld */,
 				3985AF611B6894FB0083C323 /* Supporting Files */,
 				3985B01F1B68954C0083C323 /* CamboMap-Bridging-Header.h */,
+				3965EDCC1B8EA91B0021F28C /* TableViewControllerTest.swift */,
 			);
 			path = CamboMap;
 			sourceTree = "<group>";
@@ -615,6 +639,15 @@
 		39918C051B69A04200992A7F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				39C5CCEF1B8DBB2300B89A78 /* z1.jpg */,
+				39C5CCF01B8DBB2300B89A78 /* z2.jpg */,
+				39C5CCE41B8D9CEE00B89A78 /* NYCity1.png */,
+				39C5CCE51B8D9CEE00B89A78 /* NYCity2.png */,
+				39C5CCE61B8D9CEE00B89A78 /* NYCity3.png */,
+				39C5CCE71B8D9CEE00B89A78 /* NYCity4.png */,
+				39C437691B8C62BC000F9C8C /* Yo-up-arrow.png */,
+				39C4376A1B8C62BC000F9C8C /* Yo-up-arrow@2x.png */,
+				39C437671B8C5C05000F9C8C /* 123123.png */,
 				391D9E0A1B860599001245BF /* test111.png */,
 				391D9E0B1B860599001245BF /* test222.png */,
 				391D9DDD1B85C8F3001245BF /* Yo-IntroBtb1.png */,
@@ -860,16 +893,19 @@
 				39918C751B69A04200992A7F /* Settings@3x.png in Resources */,
 				391D9E0C1B860599001245BF /* test111.png in Resources */,
 				39918C561B69A04200992A7F /* load_006.png in Resources */,
+				39C5CCEB1B8D9CEE00B89A78 /* NYCity4.png in Resources */,
 				39918C591B69A04200992A7F /* load_009.png in Resources */,
 				39918C721B69A04200992A7F /* map@3x.png in Resources */,
 				39918C5C1B69A04200992A7F /* load_012.png in Resources */,
 				39918C521B69A04200992A7F /* load_002.png in Resources */,
+				39C5CCF21B8DBB2300B89A78 /* z2.jpg in Resources */,
 				39918C601B69A04200992A7F /* load_03.png in Resources */,
 				39918C781B69A04200992A7F /* Worldwide Location@3x.png in Resources */,
 				39918C761B69A04200992A7F /* Worldwide Location.png in Resources */,
 				39918C6B1B69A04200992A7F /* directions@2x.png in Resources */,
 				39918C631B69A04200992A7F /* load_06.png in Resources */,
 				39918C791B69A04200992A7F /* web_back.png in Resources */,
+				39C5CCE81B8D9CEE00B89A78 /* NYCity1.png in Resources */,
 				39B488B91B85AA6E008934FE /* huojian@3x.png in Resources */,
 				3985AF6C1B6894FB0083C323 /* Main.storyboard in Resources */,
 				39918C541B69A04200992A7F /* load_004.png in Resources */,
@@ -885,23 +921,28 @@
 				39B488B31B85AA6E008934FE /* fire1@3X(1).png in Resources */,
 				391D9DDF1B85C8F3001245BF /* Yo-IntroBtb1.png in Resources */,
 				39918C701B69A04200992A7F /* map.png in Resources */,
+				39C437681B8C5C05000F9C8C /* 123123.png in Resources */,
 				39918C7B1B69A04200992A7F /* Yo_login_btn.png in Resources */,
 				39918C501B69A04200992A7F /* loadingM_img9.png in Resources */,
 				39918C4F1B69A04200992A7F /* loadingM_img8.png in Resources */,
 				391D9DD91B85B9CF001245BF /* Yo-RadarScreen.gif in Resources */,
 				39918C581B69A04200992A7F /* load_008.png in Resources */,
 				39918C661B69A04200992A7F /* load_09.png in Resources */,
+				39C5CCF11B8DBB2300B89A78 /* z1.jpg in Resources */,
 				39918C771B69A04200992A7F /* Worldwide Location@2x.png in Resources */,
 				39B488B21B85AA6E008934FE /* earth@3x.png in Resources */,
 				39918C681B69A04200992A7F /* load_11.png in Resources */,
 				39B4889A1B856285008934FE /* Yo-Back.png in Resources */,
 				39918C7D1B69A04200992A7F /* Yo_LoginLogo.png in Resources */,
+				39C5CCEA1B8D9CEE00B89A78 /* NYCity3.png in Resources */,
 				39D31E201B6F32A800D9B4E3 /* List.png in Resources */,
 				39918C551B69A04200992A7F /* load_005.png in Resources */,
+				39C5CCE91B8D9CEE00B89A78 /* NYCity2.png in Resources */,
 				39918C491B69A04200992A7F /* loadingM_img2.png in Resources */,
 				39B4889D1B8591FF008934FE /* Yo-Intro1.png in Resources */,
 				39B488B71B85AA6E008934FE /* fire3@3X(1).png in Resources */,
 				39B70CDD1B6B3BAC00FA4C4B /* GoogleMaps.bundle in Resources */,
+				39C4376C1B8C62BC000F9C8C /* Yo-up-arrow@2x.png in Resources */,
 				39918C511B69A04200992A7F /* load_001.png in Resources */,
 				391D9DE01B85C8F3001245BF /* Yo-IntroBtb2.png in Resources */,
 				39918C531B69A04200992A7F /* load_003.png in Resources */,
@@ -929,6 +970,7 @@
 				39918C7F1B69A04200992A7F /* Yo_rolling_default.png in Resources */,
 				39918C741B69A04200992A7F /* Settings@2x.png in Resources */,
 				39918C671B69A04200992A7F /* load_10.png in Resources */,
+				39C4376B1B8C62BC000F9C8C /* Yo-up-arrow.png in Resources */,
 				39918C6C1B69A04200992A7F /* directions@3x.png in Resources */,
 				39B488B51B85AA6E008934FE /* fire2@3X(1).png in Resources */,
 			);
@@ -960,6 +1002,7 @@
 				391D9DDC1B85BB25001245BF /* UIImage+animatedGIF.m in Sources */,
 				3985AFE91B6895250083C323 /* SBJSON.m in Sources */,
 				3985AFEB1B6895250083C323 /* SBJsonParser.m in Sources */,
+				3965EDCD1B8EA91B0021F28C /* TableViewControllerTest.swift in Sources */,
 				3985AF641B6894FB0083C323 /* AppDelegate.swift in Sources */,
 				391D9E061B85FB3A001245BF /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				3985AFF51B6895250083C323 /* StrUtils.m in Sources */,
@@ -968,6 +1011,7 @@
 				3985AFE71B6895250083C323 /* NSObject+SBJSON.m in Sources */,
 				391D9E091B85FB3A001245BF /* DGActivityIndicatorView.m in Sources */,
 				3985AFF71B6895250083C323 /* WaitingSplashView.m in Sources */,
+				39C5CCE31B8D9B0000B89A78 /* CHTCollectionViewWaterfallLayout.swift in Sources */,
 				391D9E021B85FB3A001245BF /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				3985B0311B68A3A20083C323 /* TutorialPageViewController.swift in Sources */,
 				3985AFE81B6895250083C323 /* NSString+SBJSON.m in Sources */,
